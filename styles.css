@@ -205,6 +205,11 @@ img, svg, video, iframe { max-width: 100%; }
 }
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-hint {
+  margin: 20px 0 0;
+  font-size: 14.5px;
+  color: var(--text-dim);
+}
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   padding: 11px 22px; border-radius: 10px;
@@ -460,8 +465,18 @@ kbd {
   border-bottom: 1px solid var(--border);
 }
 .cheats td { padding: 12px 20px; border-bottom: 1px solid var(--border-soft); color: var(--text-mid); }
-.cheats tbody tr:last-child td { border-bottom: 0; }
+.cheats tbody:last-child tr:last-child td { border-bottom: 0; }
 .cheats tbody tr:hover { background: var(--bg-alt); }
+
+/* group label rows inside the cheatsheet */
+.cheats tr.group td {
+  font-size: 12px; font-weight: 640;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--text-dim);
+  background: var(--bg-alt);
+  padding: 9px 20px;
+}
+.cheats tr.group:hover td { background: var(--bg-alt); }
 .cheats td:first-child { width: 34%; }
 .cheats td code { background: var(--bg-alt); }
 

@@ -22,6 +22,7 @@
     </a>
 
     <nav class="site-nav" aria-label="Lessons">
+      <a href="#terminal">00 &middot; Terminal</a>
       <a href="#lesson-1">01 &middot; Repository</a>
       <a href="#lesson-2">02 &middot; Deploy</a>
       <a href="#lesson-3">03 &middot; Collaborate</a>
@@ -50,6 +51,10 @@
         <a class="btn btn-primary" href="#lesson-1">Start lesson 01</a>
         <a class="btn btn-ghost" href="#prereqs">What you'll need</a>
       </div>
+      <p class="hero-hint">
+        Never used a terminal before? Take the
+        <a href="#terminal">two-minute primer</a> first — it covers everything the lessons assume.
+      </p>
 
       <ol class="lesson-cards">
         <li>
@@ -108,8 +113,151 @@
     </div>
   </section>
 
+  <!-- Terminal primer -->
+  <section class="section lesson" id="terminal">
+    <div class="wrap">
+      <header class="lesson-head">
+        <span class="lesson-num">Start here &middot; no video</span>
+        <h2>Getting around the terminal</h2>
+        <p class="lesson-sub">
+          Claude does most of the actual work in the lessons that follow — but you have to
+          get it pointed at the right folder first. That's what the terminal is for, and it's
+          five commands, not five hundred.
+        </p>
+      </header>
+
+      <ol class="steps">
+        <li>
+          <h3>Open it</h3>
+          <p>
+            Press <kbd>Cmd</kbd>+<kbd>Space</kbd>, type <em>Terminal</em>, hit <kbd>Enter</kbd>.
+            You'll get a window with a line ending in <code>%</code> or <code>$</code>. That's the
+            prompt: it's waiting for you to type a command and press <kbd>Enter</kbd>.
+          </p>
+          <p class="note">Nothing you type does anything until you press <kbd>Enter</kbd>. You can always delete the line and start again.</p>
+        </li>
+
+        <li>
+          <h3>Know where you are</h3>
+          <p>
+            The terminal is always sitting <em>inside</em> one folder. <code>pwd</code> prints which
+            one; <code>ls</code> lists what's in it.
+          </p>
+          <div class="code">
+            <div class="code-bar"><span class="code-lang">terminal</span><button class="copy" type="button">Copy</button></div>
+            <pre><code>pwd
+ls</code></pre>
+          </div>
+        </li>
+
+        <li>
+          <h3>Move with <code>cd</code></h3>
+          <p>
+            <code>cd</code> is "change directory" — it walks you into a folder. Everything you do
+            next happens in there.
+          </p>
+          <div class="code">
+            <div class="code-bar"><span class="code-lang">terminal</span><button class="copy" type="button">Copy</button></div>
+            <pre><code>cd ~/WORKSPACE     # go to your WORKSPACE folder
+cd my-project      # go one level deeper
+cd ..              # go back up one level
+cd ~               # go home, wherever you are</code></pre>
+          </div>
+          <p class="note">
+            <code>~</code> is shorthand for your home folder, so <code>~/WORKSPACE</code> works from
+            anywhere. Run <code>ls</code> after a <code>cd</code> to confirm you landed where you meant to.
+          </p>
+        </li>
+
+        <li>
+          <h3>Press <kbd>Tab</kbd> instead of typing</h3>
+          <p>
+            This is the single habit that makes the terminal bearable. Type the first few letters
+            of a folder or file name, press <kbd>Tab</kbd>, and the shell finishes it for you.
+          </p>
+          <div class="code">
+            <div class="code-bar"><span class="code-lang">terminal</span><button class="copy" type="button">Copy</button></div>
+            <pre><code>cd ~/WORK        # press Tab here
+cd ~/WORKSPACE/  # the shell filled the rest in</code></pre>
+          </div>
+          <ul class="ticks">
+            <li>If several names match, nothing happens on the first press — hit <kbd>Tab</kbd> again to see the options.</li>
+            <li>It escapes awkward names for you, so folders with spaces stop being a problem.</li>
+            <li>If <kbd>Tab</kbd> refuses to complete something, the thing you're typing doesn't exist. That's a feature — it catches typos before you run the command.</li>
+            <li>Press <kbd>&uarr;</kbd> to bring back the last command you ran, instead of retyping it.</li>
+          </ul>
+        </li>
+
+        <li>
+          <h3>Make a folder with <code>mkdir</code></h3>
+          <p>
+            <code>mkdir</code> creates a directory; <code>cd</code> then moves you into it. Almost
+            every project starts with exactly these two lines.
+          </p>
+          <div class="code">
+            <div class="code-bar"><span class="code-lang">terminal</span><button class="copy" type="button">Copy</button></div>
+            <pre><code>cd ~/WORKSPACE
+mkdir my-project
+cd my-project</code></pre>
+          </div>
+          <p class="note">
+            Use hyphens instead of spaces in project names — <code>my-project</code>, not
+            <code>my project</code>. It saves you a lifetime of quoting things.
+          </p>
+        </li>
+
+        <li>
+          <h3>Launch Claude in that folder</h3>
+          <p>
+            Now the important part: Claude works on <strong>the folder you're currently in</strong>.
+            That's why you <code>cd</code> first. Once you're inside the project, one word starts it.
+          </p>
+          <div class="code">
+            <div class="code-bar"><span class="code-lang">terminal</span><button class="copy" type="button">Copy</button></div>
+            <pre><code>cd ~/WORKSPACE/my-project
+claude</code></pre>
+          </div>
+          <ul class="ticks">
+            <li>Type what you want in plain English and press <kbd>Enter</kbd>.</li>
+            <li><code>/help</code> lists the built-in commands.</li>
+            <li><code>/exit</code> quits, or press <kbd>Ctrl</kbd>+<kbd>C</kbd> twice.</li>
+          </ul>
+          <div class="callout callout-warn">
+            <strong>Check the folder before you start.</strong>
+            Running <code>claude</code> from the wrong directory is the most common mistake here —
+            it will happily work on whatever it finds. Run <code>pwd</code> first if you're unsure.
+          </div>
+        </li>
+
+        <li>
+          <h3>Optional: give it a shorter name</h3>
+          <p>
+            If you'd rather type something other than <code>claude</code>, add an alias to your
+            shell config. This makes <code>agy</code> do the same thing:
+          </p>
+          <div class="code">
+            <div class="code-bar"><span class="code-lang">terminal</span><button class="copy" type="button">Copy</button></div>
+            <pre><code>echo 'alias agy="claude"' &gt;&gt; ~/.zshrc
+source ~/.zshrc</code></pre>
+          </div>
+          <p class="note">
+            <code>source</code> reloads the config so the alias works immediately; new terminal
+            windows pick it up on their own.
+          </p>
+        </li>
+      </ol>
+
+      <div class="callout callout-info">
+        <strong>That's the whole prerequisite.</strong>
+        <code>pwd</code> to see where you are, <code>cd</code> to move, <kbd>Tab</kbd> to avoid typing,
+        <code>mkdir</code> to create, <code>claude</code> to start. Everything in the three lessons
+        below builds on those five.
+      </div>
+    </div>
+  </section>
+
   <!-- Lesson 1 -->
-  <section class="section lesson" id="lesson-1">
+  <section class="section section-alt lesson" id="lesson-1">
     <div class="wrap">
       <header class="lesson-head">
         <span class="lesson-num">Lesson 01</span>
@@ -213,7 +361,7 @@ git push</code></pre>
   </section>
 
   <!-- Lesson 2 -->
-  <section class="section section-alt lesson" id="lesson-2">
+  <section class="section lesson" id="lesson-2">
     <div class="wrap">
       <header class="lesson-head">
         <span class="lesson-num">Lesson 02</span>
@@ -298,7 +446,7 @@ git push</code></pre>
   </section>
 
   <!-- Lesson 3 -->
-  <section class="section lesson" id="lesson-3">
+  <section class="section section-alt lesson" id="lesson-3">
     <div class="wrap">
       <header class="lesson-head">
         <span class="lesson-num">Lesson 03</span>
@@ -390,16 +538,25 @@ git push -u origin add-contact-page</code></pre>
   </section>
 
   <!-- Cheatsheet -->
-  <section class="section section-alt" id="cheatsheet">
+  <section class="section" id="cheatsheet">
     <div class="wrap">
       <div class="section-head">
         <h2>Command cheatsheet</h2>
-        <p>The twelve commands that cover almost everything you'll do in your first year.</p>
+        <p>Everything from the primer and the three lessons, on one screen.</p>
       </div>
       <div class="table-scroll">
         <table class="cheats">
           <thead><tr><th>Command</th><th>What it does</th></tr></thead>
           <tbody>
+            <tr class="group"><td colspan="2">Getting around</td></tr>
+            <tr><td><code>pwd</code></td><td>Print which folder you're currently in</td></tr>
+            <tr><td><code>ls</code></td><td>List what's inside it</td></tr>
+            <tr><td><code>cd FOLDER</code></td><td>Move into a folder (<code>cd ..</code> goes back up)</td></tr>
+            <tr><td><code>mkdir NAME</code></td><td>Create a new folder</td></tr>
+            <tr><td><code>claude</code></td><td>Start Claude in the folder you're in</td></tr>
+          </tbody>
+          <tbody>
+            <tr class="group"><td colspan="2">Git</td></tr>
             <tr><td><code>git init -b main</code></td><td>Start tracking the current folder</td></tr>
             <tr><td><code>git clone URL</code></td><td>Download an existing repository</td></tr>
             <tr><td><code>git status</code></td><td>Show what has changed since the last commit</td></tr>
@@ -424,6 +581,7 @@ git push -u origin add-contact-page</code></pre>
   <div class="wrap footer-inner">
     <p class="footer-brand">Git&nbsp;Foundations</p>
     <nav class="footer-links" aria-label="Footer">
+      <a href="#terminal">Terminal</a>
       <a href="#lesson-1">Repository</a>
       <a href="#lesson-2">Deploy</a>
       <a href="#lesson-3">Collaborate</a>
