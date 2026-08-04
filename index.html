@@ -1,12 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello Rishi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Git &amp; GitHub — A Three-Part Starter Course</title>
+<meta name="description" content="Learn to create a repository, deploy it to GitHub Pages, and collaborate with a team — in three short videos.">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 </head>
 <body>
-  <h1>Hello Rishi</h1>
-  <h1>Hello Pika</h1>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+      </span>
+      <span class="brand-text">Git&nbsp;Foundations</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Lessons">
+      <a href="#lesson-1">01 &middot; Repository</a>
+      <a href="#lesson-2">02 &middot; Deploy</a>
+      <a href="#lesson-3">03 &middot; Collaborate</a>
+    </nav>
+
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle colour theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+    </button>
+  </div>
+  <div class="scroll-progress" data-progress></div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Three-part course</p>
+      <h1>Ship your first project<br>to GitHub.</h1>
+      <p class="lede">
+        Everything between an empty folder on your laptop and a live URL your teammates
+        can push to. Three short videos, with every command written out below them.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#lesson-1">Start lesson 01</a>
+        <a class="btn btn-ghost" href="#prereqs">What you'll need</a>
+      </div>
+
+      <ol class="lesson-cards">
+        <li>
+          <a href="#lesson-1">
+            <span class="card-num">01</span>
+            <h3>Create &amp; push a repository</h3>
+            <p>Initialise a folder, make your first commit, and connect it to GitHub.</p>
+            <span class="card-go">Watch <span aria-hidden="true">&rarr;</span></span>
+          </a>
+        </li>
+        <li>
+          <a href="#lesson-2">
+            <span class="card-num">02</span>
+            <h3>Deploy with GitHub Pages</h3>
+            <p>Turn the same repository into a live website with a public address.</p>
+            <span class="card-go">Watch <span aria-hidden="true">&rarr;</span></span>
+          </a>
+        </li>
+        <li>
+          <a href="#lesson-3">
+            <span class="card-num">03</span>
+            <h3>Add collaborators</h3>
+            <p>Invite teammates and adopt a branch-and-pull-request workflow.</p>
+            <span class="card-go">Watch <span aria-hidden="true">&rarr;</span></span>
+          </a>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Prerequisites -->
+  <section class="section section-alt" id="prereqs">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Before you begin</h2>
+        <p>One account, one program, one editor. Five minutes of setup.</p>
+      </div>
+      <div class="grid-3">
+        <div class="tile">
+          <h3>A GitHub account</h3>
+          <p>Free at <a href="https://github.com/signup" target="_blank" rel="noopener">github.com/signup</a>. Pick a username you're happy to show a recruiter.</p>
+        </div>
+        <div class="tile">
+          <h3>Git installed</h3>
+          <p>Check with the command below. macOS ships it with the Xcode command line tools; Windows users install <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git for Windows</a>.</p>
+          <div class="code">
+            <div class="code-bar"><span class="code-lang">terminal</span><button class="copy" type="button">Copy</button></div>
+            <pre><code>git --version</code></pre>
+          </div>
+        </div>
+        <div class="tile">
+          <h3>A text editor</h3>
+          <p>Anything works. <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VS Code</a> is the common default and has Git built into the sidebar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lesson 1 -->
+  <section class="section lesson" id="lesson-1">
+    <div class="wrap">
+      <header class="lesson-head">
+        <span class="lesson-num">Lesson 01</span>
+        <h2>Create a repository and push your first commit</h2>
+        <p class="lesson-sub">
+          You'll take an ordinary folder, turn it into a Git repository, and mirror it
+          to GitHub. This is the loop you'll repeat on every project from here on.
+        </p>
+      </header>
+
+      <figure class="video">
+        <div class="video-frame">
+          <!--
+            REPLACE THIS BLOCK WITH VIDEO 1.
+
+            Local file:
+              <video controls playsinline preload="metadata" poster="videos/01-poster.jpg">
+                <source src="videos/01-create-repo.mp4" type="video/mp4">
+              </video>
+
+            YouTube:
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Create a repository"
+                      allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture"
+                      allowfullscreen></iframe>
+          -->
+          <div class="video-empty">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m10 8 6 4-6 4V8Z" stroke-linejoin="round"/><rect x="2.5" y="4" width="19" height="16" rx="3"/></svg>
+            <p><strong>Video 1</strong> &middot; Create a repository and push</p>
+            <span>Drop the file in <code>videos/</code>, then swap this block in <code>index.html</code></span>
+          </div>
+        </div>
+      </figure>
+
+      <ol class="steps">
+        <li>
+          <h3>Tell Git who you are</h3>
+          <p>Git stamps a name and email onto every commit. Set them once, globally.</p>
+          <div class="code">
+            <div class="code-bar"><span class="code-lang">terminal</span><button class="copy" type="button">Copy</button></div>
+            <pre><code>git config --global user.name "Your Name"
+git config --global user.email "you@example.com"</code></pre>
+          </div>
+          <p class="note">Use the same email as your GitHub account so your commits link back to your profile.</p>
+        </li>
+
+        <li>
+          <h3>Create the repository on GitHub</h3>
+          <p>
+            Go to <a href="https://github.com/new" target="_blank" rel="noopener">github.com/new</a>,
+            give it a name, and choose Public or Private. Leave <em>every</em> initialise
+            checkbox unticked — an empty repository is easier to connect to a folder you already have.
+          </p>
+        </li>
+
+        <li>
+          <h3>Make the folder on your machine</h3>
+          <p>Create a directory, move into it, and put something in it.</p>
+          <div class="code">
+            <div class="code-bar"><span class="code-lang">terminal</span><button class="copy" type="button">Copy</button></div>
+            <pre><code>mkdir my-project
+cd my-project
+echo "# My Project" &gt; README.md</code></pre>
+          </div>
+        </li>
+
+        <li>
+          <h3>Initialise Git and commit</h3>
+          <p>
+            <code>init</code> creates the hidden <code>.git</code> folder. <code>add</code> stages
+            the changes you want to save, and <code>commit</code> writes them into history.
+          </p>
+          <div class="code">
+            <div class="code-bar"><span class="code-lang">terminal</span><button class="copy" type="button">Copy</button></div>
+            <pre><code>git init -b main
+git add .
+git commit -m "Initial commit"</code></pre>
+          </div>
+          <p class="note"><code>-b main</code> names the first branch <code>main</code>, which is what GitHub expects.</p>
+        </li>
+
+        <li>
+          <h3>Connect the folder to GitHub and push</h3>
+          <p>
+            <code>origin</code> is just a nickname for the remote URL. The <code>-u</code> flag
+            links your local <code>main</code> to the remote one, so every push after this is a bare <code>git push</code>.
+          </p>
+          <div class="code">
+            <div class="code-bar"><span class="code-lang">terminal</span><button class="copy" type="button">Copy</button></div>
+            <pre><code>git remote add origin https://github.com/USERNAME/REPO.git
+git push -u origin main</code></pre>
+          </div>
+          <div class="callout callout-info">
+            <strong>HTTPS or SSH?</strong>
+            HTTPS is shown above and works everywhere. SSH skips the login prompt every time:
+            generate a key with <code>ssh-keygen -t ed25519</code>, add the <code>.pub</code> file
+            under <em>Settings &rarr; SSH and GPG keys</em>, then use the
+            <code>git@github.com:USERNAME/REPO.git</code> form of the URL instead.
+          </div>
+        </li>
+
+        <li>
+          <h3>The everyday loop</h3>
+          <p>From here on, this is the whole job. Run it whenever you finish a piece of work.</p>
+          <div class="code">
+            <div class="code-bar"><span class="code-lang">terminal</span><button class="copy" type="button">Copy</button></div>
+            <pre><code>git status
+git add .
+git commit -m "Describe what changed"
+git push</code></pre>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Lesson 2 -->
+  <section class="section section-alt lesson" id="lesson-2">
+    <div class="wrap">
+      <header class="lesson-head">
+        <span class="lesson-num">Lesson 02</span>
+        <h2>Deploy the repository to GitHub Pages</h2>
+        <p class="lesson-sub">
+          GitHub will serve the files in your repository as a real website, free, over HTTPS.
+          No server, no build step, no deploy command — publishing is just pushing.
+        </p>
+      </header>
+
+      <figure class="video">
+        <div class="video-frame">
+          <!-- REPLACE THIS BLOCK WITH VIDEO 2. See lesson 1 for the video / iframe snippets. -->
+          <div class="video-empty">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m10 8 6 4-6 4V8Z" stroke-linejoin="round"/><rect x="2.5" y="4" width="19" height="16" rx="3"/></svg>
+            <p><strong>Video 2</strong> &middot; Deploying with GitHub Pages</p>
+            <span>Drop the file in <code>videos/</code>, then swap this block in <code>index.html</code></span>
+          </div>
+        </div>
+      </figure>
+
+      <ol class="steps">
+        <li>
+          <h3>Make sure there's an <code>index.html</code> at the root</h3>
+          <p>
+            Pages looks for <code>index.html</code> in the folder you publish from. That file is
+            the front door of the site — everything else is linked from it.
+          </p>
+        </li>
+
+        <li>
+          <h3>Turn Pages on</h3>
+          <p>In your repository: <strong>Settings &rarr; Pages</strong>. Under <em>Build and deployment</em>:</p>
+          <ul class="ticks">
+            <li>Source: <strong>Deploy from a branch</strong></li>
+            <li>Branch: <strong>main</strong>, folder <strong>/ (root)</strong></li>
+            <li>Press <strong>Save</strong></li>
+          </ul>
+          <p class="note">The first build takes a minute or two. Watch it under the <em>Actions</em> tab if you're impatient.</p>
+        </li>
+
+        <li>
+          <h3>Visit your URL</h3>
+          <p>Pages builds the address from your username and repository name:</p>
+          <div class="code">
+            <div class="code-bar"><span class="code-lang">url</span><button class="copy" type="button">Copy</button></div>
+            <pre><code>https://USERNAME.github.io/REPO/</code></pre>
+          </div>
+          <p class="note">
+            One exception: a repository named exactly <code>USERNAME.github.io</code> is served
+            from the bare <code>https://USERNAME.github.io</code> root instead.
+          </p>
+        </li>
+
+        <li>
+          <h3>Deploy again by pushing again</h3>
+          <p>There is no second deploy step. Every push to <code>main</code> republishes the site.</p>
+          <div class="code">
+            <div class="code-bar"><span class="code-lang">terminal</span><button class="copy" type="button">Copy</button></div>
+            <pre><code>git add .
+git commit -m "Update the homepage"
+git push</code></pre>
+          </div>
+        </li>
+
+        <li>
+          <h3>Two things that trip everyone up</h3>
+          <div class="callout callout-warn">
+            <strong>Absolute paths break on project sites.</strong>
+            Your site lives under <code>/REPO/</code>, not <code>/</code>. Link to
+            <code>styles.css</code> or <code>./img/logo.png</code>, never <code>/styles.css</code> —
+            the leading slash points at the domain root and will 404.
+          </div>
+          <div class="callout callout-warn">
+            <strong>Your browser caches aggressively.</strong>
+            If a change doesn't show up, hard-reload
+            (<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>)
+            before you go hunting for a bug that isn't there.
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Lesson 3 -->
+  <section class="section lesson" id="lesson-3">
+    <div class="wrap">
+      <header class="lesson-head">
+        <span class="lesson-num">Lesson 03</span>
+        <h2>Add collaborators and work as a team</h2>
+        <p class="lesson-sub">
+          Inviting someone takes thirty seconds. The habits that stop you overwriting
+          each other's work take slightly longer — and matter far more.
+        </p>
+      </header>
+
+      <figure class="video">
+        <div class="video-frame">
+          <!-- REPLACE THIS BLOCK WITH VIDEO 3. See lesson 1 for the video / iframe snippets. -->
+          <div class="video-empty">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m10 8 6 4-6 4V8Z" stroke-linejoin="round"/><rect x="2.5" y="4" width="19" height="16" rx="3"/></svg>
+            <p><strong>Video 3</strong> &middot; Adding collaborators</p>
+            <span>Drop the file in <code>videos/</code>, then swap this block in <code>index.html</code></span>
+          </div>
+        </div>
+      </figure>
+
+      <ol class="steps">
+        <li>
+          <h3>Send the invitation</h3>
+          <p>
+            <strong>Settings &rarr; Collaborators</strong> &rarr; <strong>Add people</strong>.
+            Search by GitHub username or the email on their account. They get an email invite
+            that has to be accepted before they can push.
+          </p>
+          <p class="note">On an organisation repository the same screen also sets a role — Read, Triage, Write, Maintain or Admin. Write is the normal choice for a teammate.</p>
+        </li>
+
+        <li>
+          <h3>They clone the repository</h3>
+          <p>Cloning downloads the project <em>and</em> wires up <code>origin</code> in one step.</p>
+          <div class="code">
+            <div class="code-bar"><span class="code-lang">terminal</span><button class="copy" type="button">Copy</button></div>
+            <pre><code>git clone https://github.com/USERNAME/REPO.git
+cd REPO</code></pre>
+          </div>
+        </li>
+
+        <li>
+          <h3>Pull before you start, always</h3>
+          <p>Fetch everyone else's work before writing your own. This one habit prevents most merge conflicts.</p>
+          <div class="code">
+            <div class="code-bar"><span class="code-lang">terminal</span><button class="copy" type="button">Copy</button></div>
+            <pre><code>git pull</code></pre>
+          </div>
+        </li>
+
+        <li>
+          <h3>Work on a branch, not on <code>main</code></h3>
+          <p>A branch is your own copy of the project. Break it freely — <code>main</code> stays untouched.</p>
+          <div class="code">
+            <div class="code-bar"><span class="code-lang">terminal</span><button class="copy" type="button">Copy</button></div>
+            <pre><code>git checkout -b add-contact-page
+# ...make your changes...
+git add .
+git commit -m "Add contact page"
+git push -u origin add-contact-page</code></pre>
+          </div>
+        </li>
+
+        <li>
+          <h3>Open a pull request</h3>
+          <p>
+            After that push, GitHub shows a <em>Compare &amp; pull request</em> banner. Opening a PR
+            asks to merge your branch into <code>main</code>, and gives your teammates a place to
+            review the change line by line before it lands. Merge it, then delete the branch.
+          </p>
+        </li>
+
+        <li>
+          <h3>Protect <code>main</code> once the team grows</h3>
+          <p>
+            Under <strong>Settings &rarr; Branches</strong>, add a rule for <code>main</code> requiring
+            a pull request before merging. It stops anyone — including you at 2am — from pushing
+            straight to the branch that's live on Pages.
+          </p>
+          <div class="callout callout-info">
+            <strong>Hit a merge conflict?</strong>
+            It only means two people edited the same lines. Git marks both versions in the file:
+            delete the markers, keep the text you want, then <code>git add</code> and
+            <code>git commit</code> to finish the merge. Nothing is lost.
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Cheatsheet -->
+  <section class="section section-alt" id="cheatsheet">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Command cheatsheet</h2>
+        <p>The twelve commands that cover almost everything you'll do in your first year.</p>
+      </div>
+      <div class="table-scroll">
+        <table class="cheats">
+          <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td><code>git init -b main</code></td><td>Start tracking the current folder</td></tr>
+            <tr><td><code>git clone URL</code></td><td>Download an existing repository</td></tr>
+            <tr><td><code>git status</code></td><td>Show what has changed since the last commit</td></tr>
+            <tr><td><code>git add .</code></td><td>Stage every change for the next commit</td></tr>
+            <tr><td><code>git commit -m "…"</code></td><td>Save the staged changes into history</td></tr>
+            <tr><td><code>git push</code></td><td>Send your commits up to GitHub</td></tr>
+            <tr><td><code>git pull</code></td><td>Bring everyone else's commits down</td></tr>
+            <tr><td><code>git log --oneline</code></td><td>List the history, one line per commit</td></tr>
+            <tr><td><code>git diff</code></td><td>Show the exact lines you've changed</td></tr>
+            <tr><td><code>git checkout -b NAME</code></td><td>Create a branch and switch to it</td></tr>
+            <tr><td><code>git switch main</code></td><td>Go back to the main branch</td></tr>
+            <tr><td><code>git remote -v</code></td><td>Show which GitHub URL this folder points at</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="footer-brand">Git&nbsp;Foundations</p>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#lesson-1">Repository</a>
+      <a href="#lesson-2">Deploy</a>
+      <a href="#lesson-3">Collaborate</a>
+      <a href="#cheatsheet">Cheatsheet</a>
+      <a href="https://docs.github.com/get-started" target="_blank" rel="noopener">GitHub Docs</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
